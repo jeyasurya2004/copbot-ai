@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f3f4f6;
+  --color-bg-sidebar: #f9fafb;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-border: #e5e7eb;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-error: #ef4444;
+}
+
+.dark {
+  --color-bg-primary: #111827;
+  --color-bg-secondary: #1f2937;
+  --color-bg-sidebar: #111827;
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #9ca3af;
+  --color-border: #374151;
+  --color-accent: #60a5fa;
+  --color-accent-hover: #3b82f6;
+  --color-error: #f87171;
+}
+
+/* Base styles */
+html,
+body {
+  @apply h-full;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-primary);
+}
+
+/* Form elements */
+input,
+textarea,
+select,
+button {
+  @apply transition-colors duration-200;
+}
+
+/* Buttons */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+}
+
+/* Cards */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700;
+}
+
+/* Sidebar chat item */
+.sidebar-chat-item {
+  @apply whitespace-nowrap overflow-hidden text-ellipsis block;
+  @apply px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200;
+}
+
+/* Active chat item */
+.sidebar-chat-item.active {
+  @apply bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200;
+}
+
+/* Smooth shadow utility */
+.smooth-shadow {
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Smooth border radius utility */
+.rounded-xl {
+  border-radius: 1.25rem;
+  transition: border-radius 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Smooth spacing utility */
+.smooth-spacing {
+  transition: margin 0.3s, padding 0.3s;
+}
+
+/* Truncate long text in sidebar chat list items */
+.sidebar-chat-list-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
