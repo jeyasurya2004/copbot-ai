@@ -3,15 +3,15 @@ import { getAuth, GoogleAuthProvider, Auth } from 'firebase/auth';
 import { getFirestore, Firestore } from 'firebase/firestore';
 import { getAnalytics, isSupported as isAnalyticsSupported } from 'firebase/analytics';
 
-// Firebase configuration - ensure these match your Firebase project settings
+// Firebase configuration - using environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyAQGjdnFKwfnOYhRoqZ9On97TwfnToqTAA",
-  authDomain: "copbot-ai-project-466910.firebaseapp.com",
-  projectId: "copbot-ai-project-466910",
-  storageBucket: "copbot-ai-project-466910.appspot.com", // Updated to standard format
-  messagingSenderId: "641817061843",
-  appId: "1:641817061843:web:be208f609b49bece416726",
-  measurementId: "G-NCE8EXZN7X"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Validate configuration
