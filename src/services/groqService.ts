@@ -49,7 +49,7 @@ Answer queries thoroughly, referencing local knowledge. Be concise, helpful, and
       const messagesToSend = [...conversationHistory, { role: 'user', content: message }];
 
       const requestBody = {
-        model: 'llama3-8b-8192',
+        model: 'openai/gpt-oss-120b',
         messages: messagesToSend,
         temperature: 0.7,
         max_tokens: 2048,
